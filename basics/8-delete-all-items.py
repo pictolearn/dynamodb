@@ -4,7 +4,7 @@
 # decimal, a precision Handling package
 import boto3                                   
 import json                                   
-import decimal  
+
 # this looks after validation error (throws a statement if the entity already exists) 
 from botocore.exceptions import ClientError    
 
@@ -14,14 +14,6 @@ from boto3.dynamodb.conditions import Key, Attr
 
 # Helper class to convert a DynamoDB item to JSON.
 
-class DecimalEncoder(json.JSONEncoder):
-    def default(self, o):
-        if isinstance(o, decimal.Decimal):
-            if o % 1 > 0:
-                return float(o)
-            else:
-                return int(o)
-        return super(DecimalEncoder, self).default(o)
       
 # resource request service and region are set
 
