@@ -1,3 +1,4 @@
+#!/bin/bash
 aws dynamodb create-table \
              --region=us-east-1 \
              --table-name users \

@@ -22,7 +22,7 @@ dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 
 table = dynamodb.Table('MOVIES_DB')
 
-pe = "#yr, title, info.rating"
+pe = "#yr, title"
 # Expression Attribute Names for Projection Expression only.
 # https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html
 ean = { "#yr": "year", }

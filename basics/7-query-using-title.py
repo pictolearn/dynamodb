@@ -33,5 +33,7 @@ response = table.query(
     KeyConditionExpression=Key('year').eq(1992) & Key('title').between('A', 'L')
 )
 
-for i in response[u'Items']:
+print(response)
+
+for i in response['Items']:
     print(json.dumps(i, cls=DecimalEncoder))
