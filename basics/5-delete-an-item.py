@@ -41,7 +41,7 @@ try:
         },
         ConditionExpression="info.rating <= :val",
         ExpressionAttributeValues= {
-            ":val": decimal.Decimal(5)
+            ":val": decimal.Decimal(6)
         }
     )
      

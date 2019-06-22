@@ -44,6 +44,8 @@ response = table.scan(
 for i in response['Items']:
     print(json.dumps(i, cls=DecimalEncoder))
 
+print("---------------------------")
+
 while 'LastEvaluatedKey' in response:
     response = table.scan(
         ProjectionExpression=pe,
