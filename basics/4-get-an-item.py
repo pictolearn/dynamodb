@@ -38,11 +38,10 @@ try:
             'title': title
         }
     )
+    item = response['Item']
+    print("GetItem succeeded:")
+    print(json.dumps(item, indent=4, cls=DecimalEncoder))    
     
 # exception handling
 except ClientError as e:                                             
     print(e.response['Error']['Message'])
-else:
-    item = response['Item']
-    print("GetItem succeeded:")
-    print(json.dumps(item, indent=4, cls=DecimalEncoder))
