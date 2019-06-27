@@ -46,6 +46,10 @@ for i in response['Items']:
 
 print("---------------------------")
 
+
+## The scan method returns a subset of the items each time, called a page. 
+# The LastEvaluatedKey value in the response is then passed to the scan method via the ExclusiveStartKey parameter. 
+# When the last page is returned, LastEvaluatedKey is not part of the response. 
 while 'LastEvaluatedKey' in response:
     response = table.scan(
         ProjectionExpression=pe,

@@ -44,13 +44,12 @@ try:
             ":val": decimal.Decimal(6)
         }
     )
-     
+    print("DeleteItem succeeded:")
+    print(json.dumps(response, indent=4, cls=DecimalEncoder))     
+
 # exception handling
 except ClientError as e:
     if e.response['Error']['Code'] == "ConditionalCheckFailedException":               
         print(e.response['Error']['Message'])
     else:
         raise
-else:
-    print("DeleteItem succeeded:")
-    print(json.dumps(response, indent=4, cls=DecimalEncoder))
