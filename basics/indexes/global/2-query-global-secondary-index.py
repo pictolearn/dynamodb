@@ -24,7 +24,7 @@ table = dynamodb.Table('users')
 # querying section
 response = table.query(
      IndexName="Index",
-     KeyConditionExpression=Key('name').eq('Arun') & Key('age').eq('38')
+     KeyConditionExpression=Key('name').eq('Arun') & Key('age').eq(38)
 )
 
 for i in response['Items']:

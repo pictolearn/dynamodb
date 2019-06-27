@@ -3,9 +3,9 @@ aws dynamodb create-table \
              --region=us-east-1 \
              --table-name users \
              --attribute-definitions \
-                 AttributeName=id,AttributeType=S \
+                 AttributeName=id,AttributeType=N \
                  AttributeName=name,AttributeType=S \
-                 AttributeName=age,AttributeType=S \
+                 AttributeName=age,AttributeType=N \
              --key-schema \
                  AttributeName=id,KeyType=HASH \
                  AttributeName=name,KeyType=RANGE \
