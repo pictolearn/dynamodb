@@ -55,8 +55,3 @@ def lambda_handler(event, context):
         'body': json.dumps(errorMsg +" title >> " + title + " year >> " + year)
         }
     
-    return {
-        'statusCode': 200,
-        'body': "Thanks"
-    }
-    
